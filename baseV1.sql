@@ -40,9 +40,9 @@ CREATE TABLE administrateur(
 #------------------------------------------------------------
 
 CREATE TABLE categorie(
-        id_categori   int (11) Auto_increment  NOT NULL ,
+        id_categorie  int (11) Auto_increment  NOT NULL ,
         nom_categorie Varchar (25) NOT NULL ,
-        PRIMARY KEY (id_categori ,nom_categorie )
+        PRIMARY KEY (id_categorie )
 )ENGINE=InnoDB;
 
 
@@ -53,9 +53,8 @@ CREATE TABLE categorie(
 CREATE TABLE sous_categorie(
         id_scategorie  int (11) Auto_increment  NOT NULL ,
         nom_scategorie Varchar (25) NOT NULL ,
-        id_categori    Int NOT NULL ,
-        nom_categorie  Varchar (25) NOT NULL ,
-        PRIMARY KEY (id_scategorie ,id_categori ,nom_categorie )
+        id_categorie   Int NOT NULL ,
+        PRIMARY KEY (id_scategorie ,id_categorie )
 )ENGINE=InnoDB;
 
 
@@ -70,8 +69,7 @@ CREATE TABLE produit(
         prix_produit    DECIMAL (15,3)  NOT NULL ,
         stock_produit   Int NOT NULL ,
         id_scategorie   Int NOT NULL ,
-        id_categori     Int NOT NULL ,
-        nom_categorie   Varchar (25) NOT NULL ,
+        id_categorie    Int NOT NULL ,
         PRIMARY KEY (id_produit )
 )ENGINE=InnoDB;
 
@@ -88,10 +86,8 @@ CREATE TABLE commander(
         PRIMARY KEY (id_produit ,id_client )
 )ENGINE=InnoDB;
 
-ALTER TABLE sous_categorie ADD CONSTRAINT FK_sous_categorie_id_categori FOREIGN KEY (id_categori) REFERENCES categorie(id_categori);
-ALTER TABLE sous_categorie ADD CONSTRAINT FK_sous_categorie_nom_categorie FOREIGN KEY (nom_categorie) REFERENCES categorie(nom_categorie);
+ALTER TABLE sous_categorie ADD CONSTRAINT FK_sous_categorie_id_categorie FOREIGN KEY (id_categorie) REFERENCES categorie(id_categorie);
 ALTER TABLE produit ADD CONSTRAINT FK_produit_id_scategorie FOREIGN KEY (id_scategorie) REFERENCES sous_categorie(id_scategorie);
-ALTER TABLE produit ADD CONSTRAINT FK_produit_id_categori FOREIGN KEY (id_categori) REFERENCES categorie(id_categori);
-ALTER TABLE produit ADD CONSTRAINT FK_produit_nom_categorie FOREIGN KEY (nom_categorie) REFERENCES categorie(nom_categorie);
+ALTER TABLE produit ADD CONSTRAINT FK_produit_id_categorie FOREIGN KEY (id_categorie) REFERENCES categorie(id_categorie);
 ALTER TABLE commander ADD CONSTRAINT FK_commander_id_produit FOREIGN KEY (id_produit) REFERENCES produit(id_produit);
 ALTER TABLE commander ADD CONSTRAINT FK_commander_id_client FOREIGN KEY (id_client) REFERENCES client(id_client);
