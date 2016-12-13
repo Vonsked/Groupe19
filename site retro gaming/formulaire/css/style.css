@@ -271,9 +271,46 @@ a:hover {
 
 /*CONTENU*/
 
-.spaceinvaders {
+.droite {
+    width: 50%;
+    float: right;
+    margin-right: 15%;
+}
+
+.gauche {
+    float: left;
+}
+
+fieldset {
+    background: #434343;
+    width: 100%;
     height: 39em;
-    background: url(../img-layout/bg.png) center no-repeat;
+    padding-left: 35%;
+    border: none;
+}
+
+fieldset div {
+    width: 10em;
+}
+
+label {
+    padding-top: 20%;
+    display: block;
+}
+
+label.inline {
+    display: inline;
+    margin-right: 3%;
+}
+
+input {
+    padding: 0.5em 1em;
+}
+
+button {
+    margin-left: 22%;
+    margin-top: 5%;
+    padding: 1% 2%;
 }
 
 
