@@ -21,9 +21,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `administrateur` (
-  `id_admin` int(11) NOT NULL,
-  `pseudo_admin` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
-  `password_admin` varchar(25) COLLATE utf8_unicode_ci NOT NULL
+    `id_admin` int(11) NOT NULL,
+    `pseudo_admin` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+    `password_admin` varchar(25) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -33,8 +33,8 @@ CREATE TABLE `administrateur` (
 --
 
 CREATE TABLE `categorie` (
-  `id_categorie` int(11) NOT NULL,
-  `nom_categorie` varchar(25) COLLATE utf8_unicode_ci NOT NULL
+    `id_categorie` int(11) NOT NULL,
+    `nom_categorie` varchar(25) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLA-TE=utf8_unicode_ci;
 
 --
@@ -55,17 +55,17 @@ INSERT INTO `categorie` (`id_categorie`, `nom_categorie`) VALUES
 --
 
 CREATE TABLE `client` (
-  `id_client` int(11) NOT NULL,
-  `nom_client` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `prenom_client` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `civilite_client` varchar(3) COLLATE utf8_unicode_ci NOT NULL,
-  `adresse_client` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `cp_client` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
-  `ville_client` varchar(35) COLLATE utf8_unicode_ci NOT NULL,
-  `tel_client` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `mail_client` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `pseudo_client` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `password_client` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+    `id_client` int(11) NOT NULL,
+    `nom_client` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+    `prenom_client` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+    `civilite_client` varchar(3) COLLATE utf8_unicode_ci NOT NULL,
+    `adresse_client` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+    `cp_client` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
+    `ville_client` varchar(35) COLLATE utf8_unicode_ci NOT NULL,
+    `tel_client` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+    `mail_client` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+    `pseudo_client` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+    `password_client` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -75,10 +75,10 @@ CREATE TABLE `client` (
 --
 
 CREATE TABLE `commander` (
-  `qt` int(11) NOT NULL,
-  `date_com` date NOT NULL,
-  `id_produit` int(11) NOT NULL,
-  `id_client` int(11) NOT NULL
+    `qt` int(11) NOT NULL,
+    `date_com` date NOT NULL,
+    `id_produit` int(11) NOT NULL,
+    `id_client` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -88,14 +88,14 @@ CREATE TABLE `commander` (
 --
 
 CREATE TABLE `produit` (
-  `id_produit` int(11) NOT NULL,
-  `design_produit` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
-  `descrip_produit` text COLLATE utf8_unicode_ci NOT NULL,
-  `prix_produit` decimal(15,3) NOT NULL,
-  `stock_produit` int(11) NOT NULL,
-  `img_produit` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `id_scategorie` int(11) NOT NULL,
-  `id_categorie` int(11) NOT NULL
+    `id_produit` int(11) NOT NULL,
+    `design_produit` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+    `descrip_produit` text COLLATE utf8_unicode_ci NOT NULL,
+    `prix_produit` decimal(15,3) NOT NULL,
+    `stock_produit` int(11) NOT NULL,
+    `img_produit` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+    `id_scategorie` int(11) NOT NULL,
+    `id_categorie` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLA-TE=utf8_unicode_ci;
 
 --
@@ -129,9 +129,9 @@ INSERT INTO `produit` (`id_produit`, `design_produit`, `descrip_produit`, `prix_
 --
 
 CREATE TABLE `sous_categorie` (
-  `id_scategorie` int(11) NOT NULL,
-  `nom_scategorie` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
-  `id_categorie` int(11) NOT NULL
+    `id_scategorie` int(11) NOT NULL,
+    `nom_scategorie` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+    `id_categorie` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLA-TE=utf8_unicode_ci;
 
 --
