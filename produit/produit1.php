@@ -1,6 +1,6 @@
 <?php
 require_once "configuration.php";
-$sql = "SELECT * FROM produit WHERE id_produit=24";
+$sql = "SELECT * FROM produit WHERE id_produit=3";
 $stmt = $db->prepare($sql);
 $stmt->execute();
 
@@ -180,7 +180,35 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)):
                 <a href="#" class="button-commander">Commander</a>
             </div>
         </div>
-    </div>
+
+     <!--   <div class="content-bot clearfix">
+            <h2>Suggestions</h2>
+            <div class="w25">
+                <div class="suggestions">
+                    <img src="img-content/n64.jpg" alt="">
+                    <h2>n64</h2>
+                </div>
+            </div>
+            <div class="w25">
+                <div class="suggestions">
+                    <img src="img-content/n64.jpg" alt="">
+                    <h2>console de qualité extremeeeeeeeeeeeeeeeeee ozubfyzbyzbbbbbb</h2>
+                </div>
+            </div>
+            <div class="w25">
+                <div class="suggestions">
+                    <img src="img-content/n64.jpg" alt="">
+                    <h2>Zfzfzf</h2>
+                </div>
+            </div>
+            <div class="w25">
+                <div class="suggestions">
+                    <img src="img-content/n64.jpg" alt="">
+                    <h2>PIihzhf</h2>
+                </div>
+            </div>
+        </div>
+    </div> -->
     <!-- FOOTER -->
     <footer class="clearfix">
         <ul>
@@ -212,5 +240,6 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)):
         </div>
     </footer>
     </body>
+    </html>
     </html>
 <?php endwhile; ?>
