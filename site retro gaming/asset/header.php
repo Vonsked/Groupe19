@@ -1,3 +1,9 @@
+<?php 
+require_once"connect.php"; 
+$sql = 'SELECT * FROM categorie';
+        $stmt = $db-> prepare($sql);
+        $stmt->execute();
+?>
 <!-- HEADER -->
 <header class="clearfix">
     <section class="header">
@@ -8,93 +14,56 @@
         </div>
         <div class="header-right">
             <div class="compte">
-                <img src="img-layout/compte.png" alt="Mon Compte">
+              <h3>
+                  <a href="connexion.php"><img src="img-layout/connection.png" alt="Connexion">Connexion</a>
+              </h3>
+             <?php if($visible == 1){ ?>
+              <h3>
+                  <a href="deconnexion.php"><img src="img-layout/disconnect.png" alt="Déconnexion">Déconnexion</a>
+              </h3>
+
                 <h3>
-                    <a href="#">Mon Compte</a>
+                    <a href="#"><img src="img-layout/compte.png" alt="Mon Compte">Mon Compte</a>
                 </h3>
-            </div>
-            <div class="panier">
-                <img src="img-layout/panier.png" alt="Panier">
+
                 <h3>
-                    <a href="#">Panier</a>
+                    <a href="#"><img src="img-layout/panier.png" alt="Panier">Panier</a>
                 </h3>
-            </div>
+                <?php } ?>
+                </div>
         </div>
     </section>
     <section>
         <nav>
             <div class="navigation">
                 <ul class="categories">
+                   <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
                     <li class="firstli lis">
-                        <a href="#">NINTENDO</a>
+                        <a href="index.php?cat=1&idCat=<?= $row['id_categorie']; ?>"><?= $row['nom_categorie']; ?></a>
                         <ul class="nintendo">
+                           <?php
+                            $sql2 = 'SELECT * FROM sous_categorie';
+                            $stmt2 = $db-> prepare($sql2);
+                            $stmt2->execute();
+                            while($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)):
+                            ?>
                             <li>
-                                <a href="#">Jeux</a>
+                                <a href="index.php?idCat=<?= $row['id_categorie']; ?>&scat=2&idsCat=<?= $row2['id_scategorie']; ?>"><?= $row2['nom_scategorie']; ?></a>
                             </li>
-                            <li>
-                                <a href="#">Consoles</a>
-                            </li>
-                            <li>
-                                <a href="#">Accessoires</a>
-                            </li>
+                            <?php endwhile; ?>
                         </ul>
                     </li>
+                    <?php endwhile; ?>
+                     <?php
+                            $sql3 = 'SELECT * FROM sous_categorie';
+                            $stmt3 = $db-> prepare($sql3);
+                            $stmt3->execute();
+                            while($row3 = $stmt3->fetch(PDO::FETCH_ASSOC)):
+                            ?>
                     <li class="lis">
-                        <a href="#">SEGA</a>
-                        <ul class="sega">
-                            <li>
-                                <a href="#">Jeux</a>
-                            </li>
-                            <li>
-                                <a href="#">Consoles</a>
-                            </li>
-                            <li>
-                                <a href="#">Accessoires</a>
-                            </li>
-                        </ul>
+                        <a href="#"><?= $row3['nom_scategorie']; ?></a>
                     </li>
-                    <li class="lis">
-                        <a href="#">ATARI</a>
-                        <ul class="atari">
-                            <li>
-                                <a href="#">Jeux</a>
-                            </li>
-                            <li>
-                                <a href="#">Consoles</a>
-                            </li>
-                            <li>
-                                <a href="#">Accessoires</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="lis">
-                        <a href="#">SONY</a>
-                        <ul class="sony">
-                            <li>
-                                <a href="#">Jeux</a>
-                            </li>
-                            <li>
-                                <a href="#">Consoles</a>
-                            </li>
-                            <li>
-                                <a href="#">Accessoires</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="lis">
-                        <a href="#">MICROSOFT</a>
-                        <ul class="microsoft">
-                            <li>
-                                <a href="#">Jeux</a>
-                            </li>
-                            <li>
-                                <a href="#">Consoles</a>
-                            </li>
-                            <li>
-                                <a href="#">Accessoires</a>
-                            </li>
-                        </ul>
-                    </li>
+                    <?php endwhile; ?>
                 </ul>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
