@@ -2,7 +2,7 @@
 
 <?php
 // configuration
-$db = new PDO('mysql:host=localhost;dbname=basev2;charset=utf8mb4', 'root', '', array(PDO::ATTR_EMULATE_PREPARES => false,
+$db = new PDO('mysql:host=localhost;dbname=basev1;charset=utf8mb4', 'root', '', array(PDO::ATTR_EMULATE_PREPARES => false,
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 // new data
@@ -15,6 +15,7 @@ $stock = $_POST['stock'];
 $id_cat = $_POST['id_cat'];
 $ids_cat = $_POST['ids_cat'];
 $id = $_POST['id'];
+echo $id_cat, $ids_cat;  
 
 
 // query
