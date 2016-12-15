@@ -28,7 +28,7 @@ body {
 /*HEADER*/
 
 header {
-    height: auto;
+    height: 11em;
     padding-bottom: 1em;
 }
 
@@ -268,21 +268,17 @@ a:hover {
     }
 }
 
-
 /*CONTENU*/
 
 .produit-content {
-    height: 390%;
     background: #434343;
     padding-left: 2%;
     display: block;
 }
 
 .content-top {
-    height: 273%;
     padding-bottom: 5%;
     padding-top: 3%;
-    float: left;
 }
 
 figure {
