@@ -1,24 +1,6 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-
-
-	<title>Interface admin</title>
-</head>
-<body>
-<header>
-	<?php include "header.php" ?>
-</header>
-
-<!-- PHP -->
 <?php
 
-$db = new PDO('mysql:host=localhost;dbname=basev2;charset=utf8mb4', 'root', '', array(PDO::ATTR_EMULATE_PREPARES => false,
+$db = new PDO('mysql:host=localhost;dbname=basev1;charset=utf8mb4', 'root', '', array(PDO::ATTR_EMULATE_PREPARES => false,
 	PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 ?>
@@ -38,7 +20,7 @@ $db = new PDO('mysql:host=localhost;dbname=basev2;charset=utf8mb4', 'root', '', 
 	<section>
 		<?php
 
-		$db = new PDO('mysql:host=localhost;dbname=basev2;charset=utf8mb4', 'root', '', array(PDO::ATTR_EMULATE_PREPARES => false,
+		$db = new PDO('mysql:host=localhost;dbname=basev1;charset=utf8mb4', 'root', '', array(PDO::ATTR_EMULATE_PREPARES => false,
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 		$id=$_GET['id'];

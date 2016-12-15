@@ -2,7 +2,7 @@
 
 <?php
 // configuration
-$db = new PDO('mysql:host=localhost;dbname=basev2;charset=utf8mb4', 'root', '', array(PDO::ATTR_EMULATE_PREPARES => false,
+$db = new PDO('mysql:host=localhost;dbname=basev1;charset=utf8mb4', 'root', '', array(PDO::ATTR_EMULATE_PREPARES => false,
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 // new data
@@ -26,6 +26,6 @@ $sql = "UPDATE client
     		WHERE id_client=?";
 $q = $db->prepare($sql);
 $q->execute(array($nom,$prenom,$civilite,$adresse,$cp,$ville,$telephone,$mail,$pseudo,$mdp,$id));
-header("location: admin_afficher_client.php");
+header("location: index.php");
 
 ?>

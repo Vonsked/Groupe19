@@ -18,7 +18,7 @@
 <!-- PHP -->
 <?php
 
-$db = new PDO('mysql:host=localhost;dbname=basev2;charset=utf8mb4', 'root', '', array(PDO::ATTR_EMULATE_PREPARES => false,
+$db = new PDO('mysql:host=localhost;dbname=basev1;charset=utf8mb4', 'root', '', array(PDO::ATTR_EMULATE_PREPARES => false,
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 ?>
@@ -47,21 +47,21 @@ $db = new PDO('mysql:host=localhost;dbname=basev2;charset=utf8mb4', 'root', '', 
     </aside>
 
 
-    <section class="table_cat">
-        <div>
-            <h2>Catégorie</h2>
+    <section>
+            <h2>Commandes</h2>
             <table>
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Catégorie</th>
-                    <th>Modifier</th>
-                    <th>Supprimer</th>
+                    <th>Quantité</th>
+                    <th>Date</th>
+                    <th>Produits</th>
+                    <th>Client</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php
-                $result = $db->prepare("SELECT * FROM categorie");
+                $result = $db->prepare("SELECT * FROM commander");
                 $result->execute();
                 for($i=0; $row = $result->fetch(); $i++){
                     ?>
@@ -77,39 +77,6 @@ $db = new PDO('mysql:host=localhost;dbname=basev2;charset=utf8mb4', 'root', '', 
                 ?>
                 </tbody>
             </table>
-        </div>
-
-        <div>
-            <h2>Sous-Catégorie</h2>
-            <table>
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Sous-Catégorie</th>
-                    <th>Modifier</th>
-                    <th>Supprimer</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                $result = $db->prepare("SELECT * FROM sous_categorie");
-                $result->execute();
-                for($i=0; $row = $result->fetch(); $i++){
-                    ?>
-                    <tr class="scategorie">
-                        <td><?php echo $row['id_scategorie']; ?></td>
-                        <td><?php echo $row['nom_scategorie']; ?></td>
-                        <td><a href="admin_modifier_produit_form.php?id=<?php echo $row['id_scategorie']; ?>"> edit </a></td>
-                        <td><a href="admin_supprimer_produit_req.php?id=<?php echo $row['id_scategorie']; ?>"> suppr </a></td>
-                    </tr>
-
-                    <?php
-                }
-                ?>
-                </tbody>
-            </table>
-        </div>
-
     </section>
 </main>
 <!--

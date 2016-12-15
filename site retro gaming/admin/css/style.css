@@ -316,7 +316,7 @@ a:hover {
 /*CONTENU*/
 
 .spaceinvaders {
-    height: 39em;
+    height: 100%;
     background: url(../img-layout/bg.png) center no-repeat;
 }
 
@@ -491,4 +491,8 @@ footer li {
 .twitter {
     width: 1.8rem;
     float: right;
+}
+
+.table_cat {
+    width: 100%;
 }
