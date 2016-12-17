@@ -18,19 +18,19 @@
                 <ul>
                     <li><h4>Produits</h4></li>
                     <ul>
-                        <li><a href="index.php?mod=1">Afficher / Modifier</a></li>
-                        <li>Ajouter</li>
+                        <li><a href="modules/admin_afficher_produit.php">Afficher / Modifier</a></li>
+                        <li><a href="modules/admin_ajouter_produit.php">Ajouter</a></li>
                     </ul>
                     <li><h4>Catégories</h4></li>
                     <ul>
-                        <li><a href="admin_afficher_categorie.php">Afficher / Modifier</a></li>
-                        <li>Ajouter</li>
+                        <li><a href="modules/admin_afficher_categorie.php">Afficher / Modifier</a></li>
+                        <li><a href="modules/admin_ajouter_categories.php">Ajouter</a></li>
                     </ul>
                     <li><h4>Clients</h4></li>
                     <ul>
-                        <li><a href="admin_afficher_client.php">Afficher / Supprimer</a></li>
+                        <li><a href="modules/admin_afficher_client.php">Afficher / Supprimer</a></li>
                     </ul>
-                    <li><a href="admin_afficher_commande.php"><h4>Commandes</h4></a></li>
+                    <li><a href="modules/admin_afficher_commande.php"><h4>Commandes</h4></a></li>
                 </ul>
             </aside>
             <section>

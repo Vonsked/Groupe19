@@ -22,8 +22,6 @@ body {
     background: #6087D1;
     color: white;
     font-family: "Oswald", sans-serif;
-
-    
 }
 
 
@@ -53,6 +51,7 @@ header {
 .header-right {
     float: right;
     padding-top: 1em;
+    width: 50em;
 }
 
 header img {
@@ -60,13 +59,13 @@ header img {
     width: 15%;
 }
 
-.header-right div {
-    float: left;
-    width: 12em;
+.compte {
+    font-size: 0.7em;
 }
 
-.compte {
-    margin-right: 3em;
+.compte h3 {
+    float: left;
+    width: 15em;
 }
 
 .panier {
@@ -77,6 +76,7 @@ nav {
     height: auto;
     background: #6087D1;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .navigation {
@@ -270,6 +270,7 @@ a:hover {
     }
 }
 
+
 /*FORMULAIRE*/
 
 .formulaire_client .droite {
@@ -301,7 +302,7 @@ a:hover {
 
 .formulaire_client label.inline {
     display: inline;
-   /* margin-right: 3%;*/
+    /* margin-right: 3%;*/
 }
 
 .formulaire_client input {
@@ -313,6 +314,7 @@ a:hover {
     padding: 10% 20% 10% 20%;
 }
 
+
 /*CONTENU*/
 
 .spaceinvaders {
@@ -320,89 +322,83 @@ a:hover {
     background: url(../img-layout/bg.png) center no-repeat;
 }
 
+
 /*ADMIN*/
 
-.admin_interface
-{
+.admin_interface {
     height: 49em;
     background: #fff;
     clear: both;
 }
-.admin_interface aside
-{
+
+.admin_interface aside {
     float: left;
     width: 12%;
     background: #6087D1;
     height: 100%;
 }
-.admin_interface section
-{
+
+.admin_interface section {
     float: left;
     width: 88%;
     height: 100%;
     background: #434343;
-    overflow:auto;
+    overflow: auto;
 }
-.admin_interface section table, tr, td, th
-{
+
+.admin_interface section table, tr, td, th {
     border: 1px solid #fff;
     border-collapse: collapse;
     text-align: center;
     height: 5em;
 }
 
-.admin_interface section table
-{
+.admin_interface section table {
     width: 95%;
     margin: 2% auto 2% auto;
 }
 
-.admin_interface aside ul
-{
+.admin_interface aside ul {
     margin: 35% 0 0 20%;
-     list-style-type: none;
+    list-style-type: none;
 }
-.admin_interface aside ul li
-{
+
+.admin_interface aside ul li {
     font-size: 1.5em;
     margin: 20% 0 20% 0;
 }
-.admin_interface aside ul ul
-{
+
+.admin_interface aside ul ul {
     margin: 0;
 }
-.admin_interface aside ul ul li
-{
+
+.admin_interface aside ul ul li {
     font-size: 20px;
     margin: 5% 0 5% 15%;
     color: red;
 }
 
-.descrip_produit
-{
+.descrip_produit {
     max-width: 15em;
 }
 
-.table_cat div
-{
+.table_cat div {
     width: 50%;
     float: left;
 }
 
-.table_cat h2
-{
+.table_cat h2 {
     margin-left: 3%
 }
 
-td img
-{
+td img {
     width: 100%;
 }
 
-.imgphp
-{
+.imgphp {
     width: 10%;
 }
+
 
 /*LISTE-PRODUITS*/
 
@@ -439,7 +435,6 @@ td img
     height: 200px;
 }
 
-
 .imagetitre {
     padding-top: 3em;
     padding-bottom: 2em;
@@ -449,6 +444,7 @@ td img
 .right-content h2 {
     font-size: 1em;
 }
+
 
 /*FOOTER*/
 

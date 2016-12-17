@@ -1,9 +1,9 @@
 
 <?php
 // configuration
-require_once"connect.php";
+require_once"../connect.php";
 // new data
-$id=$_GET['idProd'];
+$id=$_GET['id'];
 
 // query
 $sql = "DELETE FROM produit
