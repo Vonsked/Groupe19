@@ -1,52 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+
+	<title>Interface admin</title>
+</head>
+<body>
+<header>
+	<?php include "../asset/header.php" ?>
+</header>
+
+<!-- PHP -->
 <?php
+require_once"../connect.php";
+?>
 
 
-require_once"connect.php";
-$id=$_GET['idProd'];
+<main class = "admin_interface">
+
+	<aside>
+		<ul>
+			<li><h4>Produits</h4></li>
+			<ul>
+				<li><a href="admin_afficher_produit.php">Afficher / Modifier</a></li>
+				<li><a href="admin_ajouter_produit.php">Ajouter</a></li>
+			</ul>
+			<li><h4>Catégories</h4></li>
+			<ul>
+				<li><a href="admin_afficher_categorie.php">Afficher / Modifier</a></li>
+				<li><a href="admin_ajouter_categories.php">Ajouter</a></li>
+			</ul>
+			<li><h4>Clients</h4></li>
+			<ul>
+				<li><a href="admin_afficher_client.php">Afficher / Supprimer</a></li>
+			</ul>
+			<li><a href="admin_afficher_commande.php"><h4>Commandes</h4></a></li>
+		</ul>
+	</aside>
+
+
+	<section>
+		<?php
+
+		$id=$_GET['id'];
 
 		$result = $db->prepare("SELECT * FROM produit WHERE id_produit= :userid");
 		$result->bindParam(':userid', $id);
 		$result->execute();
-		while( $row = $result->fetch()){
+		for($i=0; $row = $result->fetch(); $i++){
 			?>
 
-			<form action="modules/admin_modifier_produit_req.php" method="POST">
-				<input type="hidden" name="id" value="<?= $id; ?>" />
+			<form action="admin_modifier_produit_req.php" method="POST">
+				<input type="hidden" name="id" value="<?php echo $id; ?>" />
 				Désignation<br>
-				<input type="text" name="design" value="<?= $row['design_produit']; ?>" /><br>
+				<input type="text" name="design" value="<?php echo $row['design_produit']; ?>" /><br>
 				Déscription<br>
-				<input type="text" name="descrip" value="<?= $row['descrip_produit']; ?>" /><br>
+				<input type="text" name="descrip" value="<?php echo $row['descrip_produit']; ?>" /><br>
 				Images<br>
-				<input type="text" name="img" value="<?= $row['img_produit']; ?>" /><br>
+				<input type="text" name="img" value="<?php echo $row['img_produit']; ?>" /><br>
 				Prix<br>
-				<input type="text" name="prix" value="<?= $row['prix_produit']; ?>" /><br>
+				<input type="text" name="prix" value="<?php echo $row['prix_produit']; ?>" /><br>
 				Stock<br>
-				<input type="text" name="stock" value="<?= $row['stock_produit']; ?>" /><br>
+				<input type="text" name="stock" value="<?php echo $row['stock_produit']; ?>" /><br>
 				Catégorie<br>
-				<?php 
-                $result2 = $db->prepare("SELECT * FROM categorie");
-                $result2->execute();
-                ?>
-				<select name="id_cat">
-                 <?php while( $row2 = $result2->fetch()){
-                    ?>
-                  <option value="<?= $row2['id_categorie']; ?>"><?= $row2['nom_categorie']?></option>
-                  <?php } ?>
-                </select>
-                
-				<input type="text" name="" value="<?= $row['id_categorie']; ?>" /><br>
+				<input type="text" name="id_cat" value="<?php echo $row['id_categorie']; ?>" /><br>
 				Sous-catégorie<br>
-				<?php 
-                $result3 = $db->prepare("SELECT * FROM sous_categorie");
-                $result3->execute();
-                    ?>
-                <select name="ids_cat">
-                 <?php while( $row3 = $result3->fetch()){
-                    ?>
-                  <option value="<?= $row3['id_scategorie']; ?>"><?= $row3['nom_scategorie']?></option>
-                  <?php } ?>
-                </select>
-				<input type="text" name="" value="<?php echo $row['id_scategorie']; ?>" /><br>
+				<input type="text" name="ids_cat" value="<?php echo $row['id_scategorie']; ?>" /><br>
 				<input type="submit" value="Enregistrer" />
 			</form>
 
@@ -120,3 +144,14 @@ $id=$_GET['idProd'];
 			<?php
 		}
 		?>
+
+
+
+	</section>
+</main>
+<!--
+<footer>
+	<?php /*include "footer.php" */?>
+</footer>-->
+</body>
+</html>

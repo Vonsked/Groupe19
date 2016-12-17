@@ -21,10 +21,10 @@
     </ul>
     <div class="social">
         <div class="fb">
-            <img src="img-layout/fb.svg" alt="Facebook">
+            <img src="../img-layout/fb.svg" alt="Facebook">
         </div>
         <div class="twitter">
-            <img src="img-layout/twitter.svg" alt="Twitter">
+            <img src="../img-layout/twitter.svg" alt="Twitter">
         </div>
     </div>
 </footer>

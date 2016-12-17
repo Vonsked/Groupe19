@@ -2,7 +2,7 @@
 
 <?php
 // configuration
-require_once"connect.php";
+require_once"../connect.php";
 // new data
 
 $design = $_POST['design'];

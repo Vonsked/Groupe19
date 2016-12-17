@@ -1,7 +1,7 @@
 
 <?php
 // configuration
-require_once"connect.php";
+require_once"../connect.php";
 // new data
 $id=$_GET['id'];
 

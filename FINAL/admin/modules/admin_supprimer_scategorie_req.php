@@ -1,4 +1,3 @@
-
 <?php
 // configuration
 require_once"../connect.php";
@@ -6,10 +5,10 @@ require_once"../connect.php";
 $id=$_GET['id'];
 
 // query
-$sql = "DELETE FROM client
-WHERE id_client=?";
+$sql = "DELETE FROM sous_categorie
+WHERE id_scategorie=?";
 $q = $db->prepare($sql);
 $q->execute(array($id));
-header("location: admin_afficher_client.php");
+header("location: admin_afficher_categorie.php");
 
 ?>
